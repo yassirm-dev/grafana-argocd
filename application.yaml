@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: busreservation-app-argocd
+  name: grafana-argocd
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/yassirm-dev/busreservation.git
+    repoURL: https://github.com/yassirm-dev/grafana-argocd.git
 
     #HEAD updates to the latest commit
     targetRevision: HEAD
@@ -20,7 +20,7 @@ spec:
     server: https://kubernetes.default.svc
 
     #Argocd will create the config in the new namespace
-    namespace: python-apps
+    namespace: monitoring
 
   #
   syncPolicy:
